@@ -15,7 +15,7 @@ class ContentMain : AppCompatActivity() {
     var count = 0;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.content_main)
         val setting: SharedPreferences = getSharedPreferences("PFNAME", MODE_PRIVATE)
 
 
