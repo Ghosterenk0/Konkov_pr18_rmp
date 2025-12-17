@@ -14,22 +14,18 @@ class ContentMain : AppCompatActivity() {
     val key = "COUNTKEY";
     var count = 0;
     override fun onCreate(savedInstanceState: Bundle?) {
-        var binding: ContentMainBinding
         super.onCreate(savedInstanceState)
 
-        binding = ContentMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setSupportActionBar(binding.toolbar)
         val setting: SharedPreferences = getSharedPreferences("PFNAME", MODE_PRIVATE)
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Вы нажали на FloatingActionBar", Snackbar.LENGTH_LONG).show()
-        }
+
+
         count = setting.getInt(key, 0)
 
         val btn1 = findViewById<Button>(R.id.btn1)
         val btn2 = findViewById<Button>(R.id.btn2)
         val btn3 = findViewById<Button>(R.id.btn3)
+        val btn4 = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fab)
+
 
         btn1.setOnClickListener {
             Snackbar.make(it, "Prologistc.com.ua - прогроммирование на Java | Android", Snackbar.LENGTH_LONG).show()
@@ -49,6 +45,9 @@ class ContentMain : AppCompatActivity() {
 
             })
             snakebar.show()
+        }
+        btn4.setOnClickListener {
+            Snackbar.make(it, "Вы нажали на FloatingActionBar", Snackbar.LENGTH_LONG).show()
         }
 
     }
